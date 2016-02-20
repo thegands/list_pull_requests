@@ -7,22 +7,22 @@ class ListPullRequests::User
   end
 
   def get_all
-    @all = create_prs("https://api.github.com/search/issues?per_page=100&q=is:pr+author:#{name}")
+    result = create_prs("https://api.github.com/search/issues?per_page=100&q=is:pr+author:#{name}")
     # binding.pry
   end
 
   def get_merged
-    @merged = create_prs("https://api.github.com/search/issues?per_page=100&q=is:merged+author:#{name}")
+    create_prs("https://api.github.com/search/issues?per_page=100&q=is:merged+author:#{name}")
     # binding.pry
   end
 
   def get_unmerged
-    @merged = create_prs("https://api.github.com/search/issues?per_page=100&q=is:unmerged+author:#{name}")
+    create_prs("https://api.github.com/search/issues?per_page=100&q=is:unmerged+author:#{name}")
     # binding.pry
   end
 
   def create_prs(url)
-    puts "Retrieving list of pulls...."
+    puts "Retrieving list of pulls....".red
     page = 1
     begin
       json = JSON.parse(open(url + "&page=#{page}").read)

@@ -8,13 +8,13 @@ class ListPullRequests::CLI
     @request_type = gets.strip
     case @request_type
     when "all"
-      list_prs(pulls = ListPullRequests::User.new("thegands").get_all)
+      list_prs(pulls = ListPullRequests::User.new(@username).get_all)
       pr_details(pulls)
     when "merged"
-      list_prs(pulls = ListPullRequests::User.new("thegands").get_merged)
+      list_prs(pulls = ListPullRequests::User.new(@username).get_merged)
       pr_details(pulls)
     when "unmerged"
-      list_prs(pulls = ListPullRequests::User.new("thegands").get_unmerged)
+      list_prs(pulls = ListPullRequests::User.new(@username).get_unmerged)
       pr_details(pulls)
     end
   end

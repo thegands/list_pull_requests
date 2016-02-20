@@ -6,7 +6,7 @@ class ListPullRequests::CLI
   end
 
   def get_pr
-    ListPullRequests::ListPr.all
+    ListPullRequests::ListPr.new("thegands").all
   end
 
 end

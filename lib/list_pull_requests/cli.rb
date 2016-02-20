@@ -8,7 +8,7 @@ class ListPullRequests::CLI
     pulls = get_pr
     puts "#{username} has #{pulls.count} merged pull requests:"
     pulls.each.with_index(1) do |pull, i|
-      puts "#{i}. #{pull.name} - #{pull.created}"
+      puts "#{i}. #{pull.name} | " + "#{pull.repo} pull request ##{pull.number}".red + " | #{pull.created}"
     end
   end
 

@@ -25,12 +25,16 @@ class ListPullRequests::User
     puts "Retrieving list of pulls....".red
     page = 1
     begin
-      json = JSON.parse(open(url + "&page=#{page}").read)
-      amount ||= json["total_count"]
-      json["items"].each do |pr|
-        all << ListPullRequests::Pr.new(pr["pull_request"]["url"], pr["html_url"], pr["title"], pr["created_at"])
-      end
-      page += 1
+      # begin
+        json = JSON.parse(open(url + "&page=#{page}").read)
+        amount ||= json["total_count"]
+        json["items"].each do |pr|
+          all << ListPullRequests::Pr.new(pr["pull_request"]["url"], pr["html_url"], pr["title"], pr["created_at"])
+        end
+        page += 1
+      # rescue OpenURI::HTTPError
+      #   puts "error control"
+      # end
     end until all.count == amount
     all
   end

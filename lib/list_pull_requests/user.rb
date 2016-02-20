@@ -22,6 +22,7 @@ class ListPullRequests::User
   end
 
   def create_prs(url)
+    puts "Retrieving list of pulls...."
     page = 1
     begin
       json = JSON.parse(open(url + "&page=#{page}").read)

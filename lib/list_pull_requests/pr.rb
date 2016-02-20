@@ -10,6 +10,7 @@ class ListPullRequests::Pr
 
   def lookup
     unless @looked_up
+      puts "Retrieving pull details...."
       details = JSON.parse(open(api_url).read)
       @mergeable = details["mergeable"]
       @merged = details["merged_at"]

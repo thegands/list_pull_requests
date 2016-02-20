@@ -1,5 +1,5 @@
 class ListPullRequests::User
-  attr_accessor :name, :all, :merged
+  attr_accessor :name, :all
 
   def initialize(name)
     @name = name

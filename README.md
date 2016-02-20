@@ -1,8 +1,6 @@
-# ListPullRequests
+## List Pull Requests
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/list_pull_requests`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This application will list the pull requests made by a given GitHub user with additional details provided on specific pull requests. It uses the [GitHub API](https://developer.github.com/v3/) with no authentication so be wary of the [rate limit](https://api.github.com/rate_limit) that is associated with your IP address.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Follow the command line prompts. If an invalid username is entered the application will exit with an error message.
 
 ## Development
 
@@ -32,10 +30,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/list_pull_requests.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thegands/list_pull_requests.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

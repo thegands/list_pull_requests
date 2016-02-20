@@ -6,7 +6,7 @@ class ListPullRequests::CLI
   end
 
   def get_pr
-    ListPullRequests::ListPr.new("thegands").all
+    ListPullRequests::User.new("thegands").get_merged
   end
 
 end

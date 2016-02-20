@@ -3,6 +3,7 @@ class ListPullRequests::User
 
   def initialize(name)
     @name = name
+    @all = []
   end
 
   def get_all
@@ -21,9 +22,19 @@ class ListPullRequests::User
   end
 
   def create_prs(url)
-    JSON.parse(open(url).read)["items"].collect do |pr|
-      ListPullRequests::Pr.new(pr["pull_request"]["url"], pr["html_url"], pr["title"], pr["created_at"])
+    json = JSON.parse(open(url).read)
+    amount = json["total_count"]
+    json["items"].each do |pr|
+      all << ListPullRequests::Pr.new(pr["pull_request"]["url"], pr["html_url"], pr["title"], pr["created_at"])
     end
+    page = 2
+    until all.count == amount
+      JSON.parse(open(url + "&page=#{page}").read)["items"].each do |pr|
+        all << ListPullRequests::Pr.new(pr["pull_request"]["url"], pr["html_url"], pr["title"], pr["created_at"])
+      end
+      page += 1
+    end
+    all
   end
 
 end

@@ -39,7 +39,7 @@ class ListPullRequests::CLI
         prs[detail_pr].lookup
         puts "---"
         puts "#{prs[detail_pr].repo} ##{prs[detail_pr].number}".cyan
-        puts "Titled:    " + "#{prs[detail_pr].name}".green
+        puts "Title:     " + "#{prs[detail_pr].name}".green
         puts "Created:   " + "#{prs[detail_pr].created}".yellow
         puts "URL:       " + "#{prs[detail_pr].url}".blue
         print "Merged:    "; puts prs[detail_pr].merged ? "#{prs[detail_pr].merged} by #{prs[detail_pr].merged_by}".magenta : "false".magenta

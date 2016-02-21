@@ -4,21 +4,15 @@ This application will list the pull requests made by a given GitHub user with ad
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'list_pull_requests'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install the gem via:
 
     $ gem install list_pull_requests
 
 ## Usage
+
+Execute the gem via:
+
+    $ list-pull-requests
 
 Follow the command line prompts. If an invalid username is entered the application will exit with an error message.
 

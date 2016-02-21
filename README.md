@@ -6,7 +6,7 @@ This application will list the pull requests made by a given GitHub user with ad
 
 Install the gem via:
 
-    $ gem install list_pull_requests
+    $ gem install list-pull-requests
 
 ## Usage
 

@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require "list_pull_requests"
-
-ListPullRequests::CLI.new.call
